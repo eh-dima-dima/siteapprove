@@ -1,43 +1,342 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Privacy Policy for dilettante46</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Dilettante-lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: #16161f;
+            --border: #2a2a3a;
+            --border-accent: #3a3a5a;
+            --text-primary: #e8e8f0;
+            --text-secondary: #9898b0;
+            --text-muted: #6a6a82;
+            --accent: #00d4aa;
+            --accent-dim: rgba(0, 212, 170, 0.12);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* === NAV === */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .logo {
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+
+        /* === LEGAL CONTENT === */
+        .legal-hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 2rem;
+        }
+        .legal-hero .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .legal-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+        .legal-hero .updated {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 2rem 5rem;
+        }
+
+        .legal-content h2 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .legal-content h2:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 1.5rem;
+        }
+
+        .legal-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .legal-content a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .legal-content a:hover { text-decoration: underline; }
+
+        .highlight-box {
+            background: var(--accent-dim);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box p {
+            color: var(--text-primary);
+            margin-bottom: 0;
+        }
+
+        .scope-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .scope-table th,
+        .scope-table td {
+            text-align: left;
+            padding: 0.85rem 1rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .scope-table th {
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .scope-table td {
+            color: var(--text-secondary);
+        }
+        .scope-table td:first-child {
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.82rem;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        /* === FOOTER === */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            background: var(--bg-primary);
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .footer-left .logo { font-size: 1rem; }
+        .footer-left p { font-size: 0.8rem; color: var(--text-muted); }
+        .footer-links { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+        .footer-links a {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-contact { font-size: 0.85rem; color: var(--text-muted); }
+        .footer-contact a { color: var(--accent); text-decoration: none; }
+        .footer-contact a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .legal-hero { padding: 3rem 1.5rem 1.5rem; }
+            .legal-content { padding: 1.5rem 1.5rem 4rem; }
+            .scope-table { font-size: 0.85rem; }
+            .scope-table th, .scope-table td { padding: 0.65rem 0.5rem; }
+            .footer-inner { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
 </head>
 <body>
-  <h1>Privacy Policy for dilettante46</h1>
 
-  <p><strong>1. Data We Collect</strong></p>
-  <p>
-    Our application uses TikTok API Services to enable social media management features.
-    We may collect your TikTok username, profile image, and content metadata necessary
-    for scheduling and publishing posts via Postiz.
-  </p>
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">Dilettante<span>-lab</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </div>
+    </div>
+</nav>
 
-  <p><strong>2. How We Use Data</strong></p>
-  <p>
-    We only use the data to provide the services you requested (scheduling and posting).
-    We do not sell your personal data to third parties.
-  </p>
+<!-- HEADER -->
+<div class="legal-hero">
+    <div class="section-label">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: February 9, 2026</p>
+</div>
 
-  <p><strong>3. Data Storage</strong></p>
-  <p>
-    All TikTok data is stored securely on our servers and is used solely
-    for the functionality of the Postiz instance.
-  </p>
+<!-- CONTENT -->
+<div class="legal-content">
 
-  <p><strong>4. Data Deletion & Revoking Access</strong></p>
-  <p>
-    You can revoke our app's access to your TikTok account at any time via the
-    "Security and login" settings in your TikTok profile.
-    To request permanent deletion of your data from our systems,
-    contact us at <a href="mailto:dmitry20042000@gmail.com">dmitry20042000@gmail.com</a>.
-  </p>
+    <h2>1. Introduction</h2>
+    <p>Dilettante-lab ("we", "us", "our") respects your privacy and is committed to protecting the personal data of our users. This Privacy Policy describes how we collect, use, store, and share information when you use the Dilettante-lab platform, and applies to all users who connect their TikTok accounts through our service.</p>
+    <p>Our services operate in full compliance with <strong>TikTok's Developer Terms of Service</strong> and <strong>TikTok's Data Use and Privacy Policy</strong>. We encourage users to review those policies in addition to this document.</p>
 
-  <p><strong>5. Third-party Services</strong></p>
-  <p>
-    Our app complies with TikTok’s Developer Terms.
-    By using this app, you also agree to TikTok's Privacy Policy.
-  </p>
+    <h2>2. Data Collection</h2>
+    <p>Dilettante-lab collects user data exclusively through <strong>TikTok's official OAuth 2.0 API</strong>. We do not use web scraping, automated bots, or any unauthorized methods to access TikTok data.</p>
+    <p>When you connect your TikTok account, we request access to the following scopes:</p>
+
+    <table class="scope-table">
+        <thead>
+            <tr>
+                <th>API Scope</th>
+                <th>Data Accessed</th>
+                <th>Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>user.info.basic</td>
+                <td>Display name, avatar, username</td>
+                <td>Account creation and identification within our dashboard</td>
+            </tr>
+            <tr>
+                <td>user.info.profile</td>
+                <td>Bio, profile link</td>
+                <td>Profile verification — ensuring users manage the correct account</td>
+            </tr>
+            <tr>
+                <td>user.info.stats</td>
+                <td>Follower count, likes, video views</td>
+                <td>Analytics dashboard and performance tracking</td>
+            </tr>
+            <tr>
+                <td>video.publish</td>
+                <td>Publish action</td>
+                <td>Posting scheduled videos to TikTok at the user-specified time</td>
+            </tr>
+            <tr>
+                <td>video.upload</td>
+                <td>Upload action</td>
+                <td>Uploading videos to TikTok Drafts for native editing</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>We do not collect data beyond what is required by the scopes listed above. We do not access your TikTok messages, contacts, or content from other users.</p>
+
+    <h2>3. How We Use Your Data</h2>
+    <p>We use the data collected through TikTok's API strictly for the purposes of providing the services you have requested, including:</p>
+    <p>Scheduling and publishing video content to your TikTok account at the times you specify. Uploading video content to your TikTok Drafts. Displaying your account information and performance metrics in your personal dashboard. Identifying and verifying your connected TikTok account.</p>
+    <p>We do not use your data for advertising, profiling, or any purpose unrelated to the direct functionality of Dilettante-lab.</p>
+
+    <h2>4. Data Sharing</h2>
+    <div class="highlight-box">
+        <p><strong>Dilettante-lab does not sell, rent, or share user data with third parties.</strong> Your data is used strictly for service provision and is never disclosed to advertisers, data brokers, or any external entity.</p>
+    </div>
+    <p>We may share data only in the following limited circumstances: (a) when required by law or valid legal process; (b) with service infrastructure providers (such as cloud hosting) who are contractually obligated to protect your data and use it solely on our behalf.</p>
+
+    <h2>5. Data Storage &amp; Retention</h2>
+    <p>Video files that you upload through Dilettante-lab are stored temporarily on our servers only for the duration necessary to complete the scheduled post. <strong>Videos are automatically deleted from our servers after successful publication to TikTok</strong>, or upon your explicit request — whichever comes first.</p>
+    <p>Account metadata (such as your username and scheduling preferences) is retained for as long as your account is active. Upon account deletion, all associated data is permanently removed within 30 days.</p>
+
+    <h2>6. Data Deletion &amp; Revoking Access</h2>
+    <p>You have the right to delete your data and revoke Dilettante-lab's access to your TikTok account at any time. You can do so using either of the following methods:</p>
+    <p><strong>Method 1 — Revoke via TikTok:</strong> Open TikTok &rarr; Settings and Privacy &rarr; Security and permissions &rarr; Manage app permissions &rarr; Remove "Dilettante-lab".</p>
+    <p><strong>Method 2 — Request Account Deletion:</strong> Send an email to <a href="mailto:dmytro.yachichko@gmail.com">dmytro.yachichko@gmail.com</a> with the subject line "Account Deletion Request". We will process your request and permanently delete all associated data within 15 business days.</p>
+
+    <h2>7. Security</h2>
+    <p>We implement industry-standard security measures to protect your data, including encrypted data transmission (TLS/SSL), secure server infrastructure, and restricted access controls. While no system can guarantee absolute security, we are committed to maintaining the integrity and confidentiality of your information.</p>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. If we make material changes, we will notify you by posting the updated policy on this page and updating the "Last updated" date above. Continued use of Dilettante-lab after any changes constitutes acceptance of the revised policy.</p>
+
+    <h2>9. Contact</h2>
+    <p>If you have any questions, concerns, or data-related requests, please contact us at: <a href="mailto:dmytro.yachichko@gmail.com">dmytro.yachichko@gmail.com</a></p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-left">
+            <a href="index.html" class="logo">Dilettante<span>-lab</span></a>
+            <p>&copy; 2026 Dilettante-lab. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="footer-contact">
+            Support: <a href="mailto:dmytro.yachichko@gmail.com">dmytro.yachichko@gmail.com</a>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
